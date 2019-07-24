@@ -1,17 +1,32 @@
 # Icomoon
 
+[![Gem Version](https://badge.fury.io/rb/icomoon-cli.svg)](https://badge.fury.io/rb/icomoon-cli)
+
 Icomoon gem helps to update icomoon's icons via command line. this gem will automate all the steps to be done while we update icomoon's icon set.
 
 ## Installation
 
-
     $ gem install icomoon-cli
 
 ## Usage
-    
-    $ icomoon [path/to/icomoon.zip file]
 
-> By default this gem assume icomoon assets resides inside our default rails assets folder and this will keep a copy of selection.json file in our applications public folder.
+- Open [Iconmoon App](https://icomoon.io/app/#/projects)
+- Follow this [Documentation](https://icomoon.io/docs.html) to know how to get started with icomoon.
+- Once you have created icon set download the icon set.
+- By default this gem assume it's Rails Application hence will be importing to our default rails assets folder and will be keeping a copy of `selection.json` file in our applications **public folder**. if you want to customise the path you can create a file name `.icomoon.yml` add the key value pair as follows in the root of project directory.
+
+```yml
+working_directory: /vendor/icofont/tmp
+font_directory: /vendor/icofont/fonts
+stylesheet_directory: /vendor/icofont/stylesheets
+stylesheet: icons.scss
+selection_directory: /vendor/icofont/stylesheets
+```
+
+- You can either give path for icomoon's generated zip file or you can just give path to the extracted icon set folder.
+    
+      $ icomoon [path/to/icomoon]
+
 
 ## Contributing
 
@@ -24,6 +39,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Icomoon project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/icomoon/blob/master/CODE_OF_CONDUCT.md).
-
-
-> Note: Currently this gem only support for linux and mac. in order to make this gem to work make you have installed `unzip` package is installed in your system. 

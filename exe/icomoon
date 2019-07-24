@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 require 'icomoon'
 
-icomoon_zip = ARGV[0]
+icomoon_files = ARGV[0]
 
-abort "Provide a file path to icomoon zip file" unless icomoon_zip
+abort "Provide a file path to icomoon files" unless icomoon_files
 
-Icomoon.update(icomoon_zip)
+Icomoon.import(icomoon_files)
